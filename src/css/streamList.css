@@ -3,3 +3,8 @@
   align-content: center;
   justify-content: center;
 }
+
+.stream-list-container {
+  max-height: 510px;
+  overflow-y: auto;
+}
