@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 import StreamList from "./streams/StreamList";
 import StreamCreate from "./streams/StreamCreate";
 import StreamShow from "./streams/StreamShow";
