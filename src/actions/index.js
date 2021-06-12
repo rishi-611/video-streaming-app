@@ -1,5 +1,5 @@
 import * as constants from "./ActionConstants";
-
+import history from "../history";
 import jsonServer from "../jsonServer";
 
 export const signIn = (id) => {
@@ -28,17 +28,18 @@ export const createStream = (stream) => {
       userId: userId,
     });
 
-    return dispatch({
+    dispatch({
       type: constants.CREATE_STREAM,
       payload: response.data,
     });
+    history.push("/");
   };
 };
 
 export const showStreamList = () => async (dispatch) => {
   const response = await jsonServer.get("/streams");
 
-  return dispatch({
+  dispatch({
     type: constants.SHOW_STREAMS_LIST,
     payload: response.data,
   });
