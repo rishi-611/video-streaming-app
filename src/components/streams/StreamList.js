@@ -31,7 +31,10 @@ class StreamList extends React.Component {
       return null;
     }
     return (
-      <Link to="/streams/create" className="btn btn-primary btn-lg btn-block">
+      <Link
+        to="/streams/create"
+        className="btn btn-primary btn-lg btn-block mb-3"
+      >
         Create Stream
       </Link>
     );
