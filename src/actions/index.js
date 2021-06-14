@@ -54,13 +54,14 @@ export const showStream = (id) => async (dispatch) => {
   });
 };
 
-export const editStream = (id, formValues) => async (dispatch) => {
-  const response = await jsonServer.put(`/streams/${id}`, formValues);
+export const editStream = (id, formValues) => async (dispatch, getState) => {
+  const response = await jsonServer.patch(`/streams/${id}`, formValues);
 
-  return dispatch({
+  dispatch({
     type: constants.EDIT_STREAM,
     payload: response.data,
   });
+  history.push("/");
 };
 
 export const deleteStream = (id) => async (dispatch) => {

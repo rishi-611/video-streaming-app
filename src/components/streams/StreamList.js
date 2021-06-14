@@ -9,16 +9,19 @@ class StreamList extends React.Component {
     this.props.showStreamList();
   }
 
-  renderButtons = (authorId) => {
+  renderButtons = (authorId, id) => {
     const currentUserId = this.props.currentUserId;
     if (currentUserId !== authorId) {
       return null;
     }
     return (
       <React.Fragment>
-        <button type="button" className="btn btn-outline-primary mr-2 mr-md-3">
+        <Link
+          to={`/streams/edit/${id}`}
+          className="btn btn-outline-primary mr-2 mr-md-3"
+        >
           Edit
-        </button>
+        </Link>
         <button type="button" className="btn btn-outline-danger float-right">
           Delete
         </button>
@@ -55,7 +58,7 @@ class StreamList extends React.Component {
               <h5 className="mb-1">{stream.title}</h5>
               <p className="mb-1">{stream.description}</p>
             </div>
-            <div>{this.renderButtons(stream.userId)}</div>
+            <div>{this.renderButtons(stream.userId, stream.id)}</div>
           </div>
         </li>
       );

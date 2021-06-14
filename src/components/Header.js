@@ -27,12 +27,8 @@ const Header = function () {
               Streams
             </Link>
           </li>
+
           <li className="nav-item">
-            <Link to="/streams/show" className="nav-link">
-              show
-            </Link>
-          </li>
-          <li className="nav-item ">
             <Oauth />
           </li>
         </ul>
