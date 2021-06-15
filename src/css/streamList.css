@@ -8,3 +8,29 @@
   max-height: 510px;
   overflow-y: auto;
 }
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  cursor: pointer;
+}
+
+.show-stream-link {
+  color: #212529;
+}
+.show-stream-link:hover {
+  text-decoration: none;
+  color: #0f1011;
+}
+
+@media only screen and (min-width: 768px) {
+  .btn-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

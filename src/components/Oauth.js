@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions";
+import { Link } from "react-router-dom";
 
 class Oauth extends React.Component {
   componentDidMount() {
@@ -44,24 +45,26 @@ class Oauth extends React.Component {
 
     if (this.props.isSignedIn === true) {
       return (
-        <button
+        <Link
+          to="/"
           type="button "
           className="btn btn-danger"
           onClick={() => this.onSignOutClick()}
         >
           Sign Out
-        </button>
+        </Link>
       );
     }
 
     return (
-      <button
+      <Link
+        to="/"
         type="button "
         className="btn btn-success"
         onClick={() => this.onSignInClick()}
       >
         Sign in
-      </button>
+      </Link>
     );
   }
 
